@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Check Number</title>
+</head>
+<body>
+    
+    Input1:<input type="text" id="input1">
+    <br><br>
+    Input2:<input type="text" id="input2">
+    <br><br>
+    <input type="submit" value="submit" onclick="check_numbers()">
+
+    <br><br>
+
+    <p id="result">Result:</p>
+
+    <script>
+        function check_numbers()
+        {
+        var num1=parseInt(document.getElementById("input1").value);
+        var num2=parseInt(document.getElementById("input2").value);
+       
+            if((num1==100 || num2==100))
+            {
+               document.getElementById("result").innerHTML="Result:True";
+            }
+            else if(num1+num2==100)
+            {
+                document.getElementById("result").innerHTML="Result:True";
+            }
+            else
+            {
+                document.getElementById("result").innerHTML="Result:False";
+            }
+        
+       }
+    </script>
+</body>
+</html>

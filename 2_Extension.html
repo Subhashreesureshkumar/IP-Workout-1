@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extension</title>
+</head>
+<body>
+    <h3>Extension of a file</h3>
+    <br>
+    <label for="filename">Enter the Filename:</label>
+    <input type="text" name="filename" id="filename">
+    <br><br>
+    <input type="submit" value="Get Extension" onclick="get_Extension(document.getElementById('filename').value)">
+    <p id="extension"></p>
+    <script>
+        function get_Extension(filename)
+        {
+            var extension=filename.substr(filename.indexOf("."));
+            document.getElementById("extension").innerHTML="Extension of the file "+filename+":  "+extension;
+        }
+    </script>
+</body>
+</html>

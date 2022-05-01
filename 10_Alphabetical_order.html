@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Sort String</title>
+</head>
+<body>
+  
+    <label for="input">Enter String:</label>
+    <input type="text" name="input" id="input">
+    <br><br>
+    <input type="submit" value="Sort string" onclick="sort_String()">
+    <p id="sort_string"></p>
+
+    <script>
+        function sort_String()
+        {
+            var input=document.getElementById('input').value;
+            var characters=input.split('');
+            var temp;
+            for(let i=0;i<characters.length;i++)
+            {
+                for(let j=0;j<characters.length;j++)
+                {
+                    if(characters[i]<characters[j])
+                    {
+                        temp=characters[i];
+                        characters[i]=characters[j];
+                        characters[j]=temp;
+                    }
+                }
+            }
+            document.getElementById('sort_string').innerHTML="New String: "+characters.join('');
+        }
+    </script>
+</body>
+</html>

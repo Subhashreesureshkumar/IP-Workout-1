@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Random Background</title>
+    <style>
+        input{
+            width: 400px;
+            height: 200px;
+            border-radius: 30%;
+            font-size: xx-large;
+            background-color:skyblue;
+            border: 2px solid #000000;
+        }
+        </style>
+</head>
+<body>
+   
+    <center><input type="button" value="Toggle Background" onclick="toggle_background()"></center>
+
+    <script>
+        function toggle_background()
+        {
+            var code="0123456789ABCDEF";
+            
+            var hex_code="#";
+
+            for(let i=0;i<6;i++)
+            {
+                hex_code+=code[parseInt(Math.random()*16)];
+            }
+
+            document.body.style.backgroundColor=hex_code;
+        }
+    </script>
+</body>
+</html>

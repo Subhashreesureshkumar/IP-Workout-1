@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Replace Character</title>
+</head>
+<body>
+    <label for="input">Enter the String:</label>
+    <input type="text" name="input" id="input">
+    <br><br>
+    <input type="submit" value="Replace" onclick="replacebynext()">
+    <p id="replace"></p>
+
+    <script>
+        function replacebynext()
+        {
+            var input=document.getElementById("input").value;
+            var characters=input.split('');
+            for(let i=0;i<characters.length;i++)
+            {
+                if(characters[i]=='')
+                {
+                    return;
+                }
+                else if( characters[i]=='Z')
+                {
+                     characters[i]='A';
+                }
+                else if( characters[i]=='z')
+                {
+                     characters[i]='a';
+                }
+                else
+                {
+                     characters[i]=String.fromCharCode(1+characters[i].charCodeAt(0));
+                }
+            }
+            document.getElementById("replace").innerHTML="Relaced String: "+characters.join('');
+        }
+    </script>
+</body>
+</html>

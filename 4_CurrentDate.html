@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Current Date</title>
+        
+    </head>
+    <body>
+        Date Seperator:<input type="text" id="date_seperator">
+        <br><br>
+        <input type="button"  value="Current Date" onclick="get_current_date()">
+        <p id="currentdate">Current date:</p>
+        <script>
+        function get_current_date()
+        {
+            
+            var date=new Date();
+            var dd=date.getDate();
+            var mm=date.getMonth()+1;
+            var yyyy=date.getFullYear();
+            var seperator=document.getElementById("date_seperator").value;
+            if(dd<10)
+            {
+                dd='0'+dd;
+            }
+            if(mm<10)
+            {
+                mm='0'+mm;
+            }
+            if(seperator=="-")
+            {
+            document.getElementById("currentdate").innerHTML="Current Date: "+dd+"-"+mm+"-"+yyyy;
+            }
+            if(seperator=="/")
+            {
+            document.getElementById("currentdate").innerHTML="Current Date: "+dd+"/"+mm+"/"+yyyy;
+            }
+        }
+        </script>
+    </body>
+    
+</html>
